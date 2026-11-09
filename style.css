@@ -2763,3 +2763,18 @@ body.dark-mode .sun-icon { opacity: 1; transform: rotate(0) scale(1); }
     will-change: auto;
   }
 }
+
+/* Mobile Footer: Back to Top aligned right */
+@media (max-width: 600px) {
+  .footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+  }
+
+  .footer-legal .back-top {
+    margin-left: auto;
+    white-space: nowrap;
+  }
+}
