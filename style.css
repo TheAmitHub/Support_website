@@ -2632,3 +2632,134 @@ body.dark-mode .sun-icon { opacity: 1; transform: rotate(0) scale(1); }
   font-size: clamp(27px, 4vw, 38px);
   line-height: 1.2;
 }
+
+/* ===== FINAL MOBILE FOOTER: Explore + Contact side-by-side ===== */
+@media (max-width: 600px) {
+  .site-footer {
+    padding: 22px 16px 12px;
+  }
+
+  .footer-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+    align-items: start;
+    gap: 20px 14px;
+  }
+
+  .footer-about {
+    grid-column: 1 / -1;
+    gap: 8px;
+  }
+
+  .footer-about p {
+    max-width: 100%;
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .footer-links,
+  .footer-contact {
+    grid-column: auto;
+    min-width: 0;
+    gap: 7px;
+  }
+
+  .footer-links h2,
+  .footer-contact h2 {
+    margin-bottom: 4px;
+    font-size: 11px;
+    letter-spacing: .7px;
+  }
+
+  .footer-links a,
+  .footer-contact a,
+  .footer-contact .contact-link {
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .footer-contact .contact-link {
+    align-items: flex-start;
+    gap: 7px;
+  }
+
+  .footer-contact .contact-link svg {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
+    margin-top: 2px;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    margin-top: 18px;
+    padding-top: 12px;
+    font-size: 10.5px;
+  }
+
+  .footer-legal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px 12px;
+    width: 100%;
+  }
+
+  .footer-legal a {
+    font-size: 10.5px;
+    line-height: 1.45;
+  }
+
+  .back-top {
+    font-size: 10.5px;
+    white-space: nowrap;
+  }
+}
+
+/* Keep the two footer columns even on narrow phones (320px+). */
+@media (max-width: 380px) {
+  .footer-main {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+    gap: 18px 10px;
+  }
+  .footer-about { grid-column: 1 / -1; }
+  .footer-links a,
+  .footer-contact a,
+  .footer-contact .contact-link { font-size: 11px; }
+  .footer-legal { flex-direction: row; }
+}
+
+
+/* ==========================================
+   DTA — SMOOTH SCROLL REVEAL (FINAL)
+   ========================================== */
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translate3d(0, 32px, 0);
+  transition:
+    opacity 0.85s ease,
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+/* Accessibility: motion disabled */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+}
