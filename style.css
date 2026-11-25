@@ -2778,3 +2778,20 @@ body.dark-mode .sun-icon { opacity: 1; transform: rotate(0) scale(1); }
     white-space: nowrap;
   }
 }
+/* Desktop QR Size Enhancement */
+.qr-payment img {
+    width: 260px;
+    height: 260px;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 15px auto;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .qr-payment img {
+        width: 260px;
+        height: 260px;
+    }
+}
